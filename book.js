@@ -42,4 +42,7 @@ function arr() {
 function show(x){
     x.innerHTML=marked.parse(x.innerText);
 
+}function db(db) {
+    const turndownService = new TurndownService();
+    db.innerText = turndownService.turndown(db.innerHTML);
 }
