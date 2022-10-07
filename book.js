@@ -39,3 +39,7 @@ function arr() {
 
     }
 }
+function show(x){
+    x.innerHTML=marked.parse(x.innerText);
+
+}
