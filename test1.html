@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="1.css"/>
+    <!-- <script src="1.js" type="text/javascript" charset="utf-8"></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="frame">
+        <!-- 六张轮播图 -->
+        <div class="bigphoto">
+            <div class="numbertext">1/6</div>
+            <img src="photo/1.jpg" style="width:100%">
+            <a class="text1">森林</a>
+        </div>
+        <div class="bigphoto">
+            <div class="numbertext">2/6</div>
+            <img src="photo/2.jpg" style="width:100%">
+            <a class="text1">海滨</a>
+        </div>
+        <div class="bigphoto">
+            <div class="numbertext">3/6</div>
+            <img src="photo/3.jpg" style="width:100%">
+            <a class="text1">群山</a>
+        </div>
+        <div class="bigphoto">
+            <div class="numbertext">4/6</div>
+            <img src="photo/4.jpg" style="width:100%">
+            <a class="text1">极光</a>
+        </div>
+        <div class="bigphoto">
+            <div class="numbertext">5/6</div>
+            <img src="photo/5.jpg" style="width:100%">
+            <a class="text1">大山</a>
+        </div>
+        <div class="bigphoto">
+            <div class="numbertext">6/6</div>
+            <img src="photo/6.jpg" style="width:100%">
+            <a class="text1">极寒</a>
+        </div>
+        <!-- 箭头 -->
+        <a class="prev" onclick="nextIndex(-1)">&#10094</a>
+        <a class="next" onclick="nextIndex(1)">&#10095</a>
+        <div class="low">
+            <img class="photo2" src="photo/1.jpg" onclick="hoverIndex(1)">
+            <img class="photo2" src="photo/2.jpg" onclick="hoverIndex(2)">
+            <img class="photo2" src="photo/3.jpg" onclick="hoverIndex(3)">
+            <img class="photo2" src="photo/4.jpg" onclick="hoverIndex(4)">
+            <img class="photo2" src="photo/5.jpg" onclick="hoverIndex(5)">
+            <img class="photo2" src="photo/6.jpg" onclick="hoverIndex(6)">
+        </div>
+    </div>
+</body>
+<script>
+    let slideIndex=1;
+    console.log(1000);
+    showIndex(1);
+    
+    function showIndex(n)
+    {   let i;
+        let slides = document.getElementsByClassName("bigphoto");
+        let photoTest = document.getElementsByClassName("photo");
+        if(n>slides.length){slideIndex=1};
+        if(n<1){slideIndex=slides.length};
+        for(i=0;i<slides.length;i++){
+            slides[i].style.display="none";
+           
+    }
+        slides[slideIndex-1].style.display="block";
+ 
+    }
+    function nextIndex(n)
+    {
+        showIndex(slideIndex+=n);
+    }
+    function hoverIndex(n)
+    {
+        showIndex(slideIndex=n)
+    }
+    </script>
+</html>
